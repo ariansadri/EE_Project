@@ -4,7 +4,7 @@ var uLng = -95.3698;
 
 function addMarker (location) {
   var our_icon = {
-    url: "EE_edited.png", // url
+    url: "../static/images/EE_edited.png", // url
     scaledSize: new google.maps.Size(35, 50), // scaled size
     origin: new google.maps.Point(0,0), // origin
 };
