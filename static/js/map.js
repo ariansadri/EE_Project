@@ -96,7 +96,7 @@ function getVals() {
     AddressEntry.value == undefined ||
     AddressEntry.value.length == 0) {
     alert("The Address or City Box is empty.\n" +
-      "Please enter a place and thin clock on GO");
+      "Please enter a place and then click on GO.");
     return false;
   }
 
