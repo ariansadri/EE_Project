@@ -214,26 +214,28 @@ function ReinitMap(xLat, xLng) {
     transitLayer.setMap(null); 
     bikeLayer.setMap(map); 
   }); 
-  d3.select('#my-loc').on('click', () => {  
+  d3.select('#my-loc').on('click', () => { 
+    console.log("My Location Clicked");
     if (navigator.geolocation) { 
-      navigator.geolocation.getCurrentPosition(function (position) { 
-        var pos = { 
-          lat: position.coords.latitude, 
-          lng: position.coords.longitude 
-        }; 
-        infoWindow.setPosition(pos); 
-        marker.setMap(null); 
-        marker = addMarker(pos) 
-        map.setCenter(pos); 
-        drawCircle(pos.lat, pos.lng, "1", "my-loc");
-      }, function () { 
-        handleLocationError(true, infoWindow, map.getCenter()); 
-      }); 
-    } else { 
-      // Browser doesn't support Geolocation 
-      handleLocationError(false, infoWindow, map.getCenter()); 
-    } 
-  }); 
+        navigator.geolocation.getCurrentPosition(function (position) { 
+          var pos = { 
+            lat: position.coords.latitude, 
+            lng: position.coords.longitude 
+          }; 
+          infoWindow.setPosition(pos); 
+          marker.setMap(null); 
+          marker = addMarker(pos) 
+          map.setCenter(pos); 
+          drawCircle(pos.lat, pos.lng, "1", "my-loc2");
+          FullAddress=FindAddress(pos.lat, pos.lng);
+        }, function () { 
+          handleLocationError(true, infoWindow, map.getCenter()); 
+        }); 
+      } else { 
+        // Browser doesn't support Geolocation 
+       handleLocationError(false, infoWindow, map.getCenter()); 
+      } 
+    }); 
   d3.select('#clear').on('click', () => { 
     trafficLayer.setMap(null); 
     transitLayer.setMap(null); 
