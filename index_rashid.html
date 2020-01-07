@@ -1,0 +1,98 @@
+<!DOCTYPE html>  
+<html>   
+   
+<head style="background-color:black">  
+   <meta charset="utf-8">  
+   <title>Everything Everywhere</title>  
+   <meta name="viewport" content="width=device-width, initial-scale=1">  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">  
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
+   <link rel="stylesheet" href="../static/css/style.css">  
+   <!-- <link rel="stylesheet" href="style.css"/> vh vw  -->  
+</head>   
+  
+<body style="background-color: #5ED5EC">  
+    <div class="wrapper">  
+        <div class="row"> 
+            <div class="col-md-12"> 
+                <h1 class = 'text-center' style="font-size: 70px;  
+                    font-weight: bold;color:black;">Everything Everywhere</h1> 
+            </div>         </div> 
+ 
+        <div class="hero text-center">  
+            <!-- <h1>Everything Everywhere</h1> -->  
+            <p></p>  
+        </div>  
+
+ 
+        <div class="container">  
+            <div class="row">  
+                <div class="col-md-6">  
+                    <div class="panel panel-default" style="background-color: #4CAEE3"> 
+                        <h5 style="font-size:15px;color:black;  
+                            text-align:center;">Enter Address or City to Center the Map on</h5> 
+                        <input id="CenterBox" type="text" size="63" ></input> 
+                    </div> 
+                </div>  
+
+ 
+                <!-- <div class="col-md-2"></div> --> 
+
+ 
+                <div class="col-md-2">  
+                    <div class="panel panel-default" style="background-color: #4CAEE3"> 
+                        <h5 style="font-size:15px;color:black; text-align:center;">Radius (Miles)?</h5> 
+                        <input id="RadiusBox" type="text" size="14" ></input> 
+                    </div> 
+                </div> 
+
+                <div class="col-md-2">  
+                    <div class="panel panel-default" style="background-color: #4CAEE3"> 
+                        <h5 style="font-size:15px;color:black; text-align:center;">Find What?</h5> 
+                        <input id="LookFor" type="text" size="14" ></input> 
+                    </div> 
+                </div> 
+
+                <!-- <button id="filter-btn" type="button" class="btn btn-default">Search</button>  --> 
+                <p style="color: black">Click!</p> 
+                <form>  
+                    <input id="clickMe" type="button" button style="height:36px;width:44px" value="GO", onclick="getVals()"></input> 
+                </form> 
+                   
+               <div id="map" style = "width: 1140px; height: 600px"> </div>  
+    <button id="traffic-b" style="color: black">Traffic</button> 
+	<button id="transit-b" style="color:black">Transit</button> 
+    <button id="bike-b" style="color:black">Bike</button> 
+    <button id="my-loc" style="color:black">My Location</button> 
+    <button id="clear" style="color:black">Clear Map</button> 
+      
+</body> 
+ 
+<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>  
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script> 
+<script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script> 
+<script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script> 
+
+ 
+<script src="map.js"></script>  
+<!-- <script src="../static/js/map.js"></script> -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD07ZX25HHNAPLJMp0Kfld4BDu9D1RTltc&callback=initMap"></script>  --> 
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD07ZX25HHNAPLJMp0Kfld4BDu9D1RTltc&callback=initMap" async defer></script>   -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=t5hFrMbJixJv02I9pJWLb5ZdQbkmeiuHf5OpBGSLRdU&callback=initMap" async defer></script> -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&callback=initMap" async defer></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&libraries=places,geometry&callback=initMap" async defer></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&libraries=places&callback=initAutocomplete" async defer></script> -->
+<!-- <script src="/static/js/map.js"></script>  -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvyVDA_5c3EZegPUVqejNZ93ldGpwoJgY&libraries=places" async defer></script> -->
+ 
+            </div>  
+        </div>  
+
+ 
+        <footer class="footer" style="background-color:black";>  
+            <span class="bottom" style="background-color:black; font-size:70px; text-align:center; ">Everything Everywhere</span>  
+        </footer>  
+
+ 
+   </div>  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>  
